@@ -18,13 +18,12 @@
     Build skills, not excuses.
     Your terminal is your laboratory.
     
-4. Now first manually Random quote ke mechanism ko test karo:
+4. Now, First, manually test the random quote mechanism:
     - `shuf -n 1 ~/motivation/quotes.txt`
-    - `shuf` = input ki lines ko randomly shuffle karta hai.
+    - `shuf` = randomly shuffles the lines of the input.
 5. Now Create a executable file motivation.sh :
     - `nano ~/motivation/motivation.sh`
     - paste it :
-        
         #!/bin/bash
         
         QUOTE=$(shuf -n 1 "$HOME/motivation/quotes.txt")
@@ -39,6 +38,8 @@
     - Now make `motivation.sh`  executable : `chmod +x ~/motivation/motivation.sh`
     - Now run to check : `~/motivation/motivation.sh`
     
-6. If our shell type is Zsh then : `nano ~/.zshrc` → At end of all Add this: 
-    - ~/motivation/motivation.sh
+6. If our shell type is Zsh then : `nano ~/.zshrc` (if shell type is bash then:`nano ~/.bashrc`)  → At end of all Add this: 
+    - ~/motivation/motivation.sh 
+* 
 7. Then. : `source ~/.zshrc` , Now You All set ( done 👍 )
+🎉 You're all set! Every time you open a new terminal, a random motivational quote will appear at the top.
