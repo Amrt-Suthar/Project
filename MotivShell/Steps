@@ -1,0 +1,44 @@
+# Project 1 : MotivShell
+
+### Steps:
+
+1. To check shell type Enter this command: `echo $SHELL`
+    - If shell type is *zsh* then shell startup file is : ~/.zshrc (roughly means: /home/kali/.zshrc )
+2. Create folder for Project: `mkdir motivation`
+3. Now create quote.txt file : `nano ~/motivation/quotes.txt` 
+    - Then paste it :
+    Discipline beats motivation.
+    Small progress is still progress.
+    Keep going. Your future self will thank you.
+    Learn something today that you didn't know yesterday.
+    Consistency creates results.
+    Focus on the process, not the applause.
+    One command at a time.
+    Don't stop when it gets hard.
+    Build skills, not excuses.
+    Your terminal is your laboratory.
+    
+4. Now first manually Random quote ke mechanism ko test karo:
+    - `shuf -n 1 ~/motivation/quotes.txt`
+    - `shuf` = input ki lines ko randomly shuffle karta hai.
+5. Now Create a executable file motivation.sh :
+    - `nano ~/motivation/motivation.sh`
+    - paste it :
+        
+        #!/bin/bash
+        
+        QUOTE=$(shuf -n 1 "$HOME/motivation/quotes.txt")
+        
+        printf '\n'
+        printf '╔══════════════════════════════════════════════╗\n'
+        printf '║  %s\n' "$QUOTE"
+        printf '╚══════════════════════════════════════════════╝\n'
+        printf '\n'
+        
+    
+    - Now make `motivation.sh`  executable : `chmod +x ~/motivation/motivation.sh`
+    - Now run to check : `~/motivation/motivation.sh`
+    
+6. If our shell type is Zsh then : `nano ~/.zshrc` → At end of all Add this: 
+    - ~/motivation/motivation.sh
+7. Then. : `source ~/.zshrc` , Now You All set ( done 👍 )
